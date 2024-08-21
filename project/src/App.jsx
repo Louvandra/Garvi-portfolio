@@ -8,6 +8,9 @@ import Home from './pages/home';
 import About from './pages/about';
 import Skill from './pages/skill';
 import Contact from './pages/contact';
+import Admin from './components/Admin';
+import PrivateRoute from './PrivateRoute';
+import Logout from './components/logout'
 
 function App() {
   return (
@@ -20,8 +23,11 @@ function App() {
           <Route path="/skill" element={<Skill />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/logout" element={<Logout />} />
           <Route path="/register" element={<Register />} />
-          <Route path="/" element={<Login />} />
+          <Route path="/admin" element={<PrivateRoute><Admin/></PrivateRoute>} />
+          
+          {/* <Route path="/" element={<Login />} /> */}
         </Routes>
       </main>
       <Footer />

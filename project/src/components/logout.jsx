@@ -1,23 +1,30 @@
-// import { signOut } from "firebase/auth";
+import React, {useContext} from 'react';
+import { AuthContext } from './AuthProvider';
+import {auth} from '../firebase';
+import { useNavigate } from 'react-router-dom';
 
-// const handleLogout = async () => {
-//   const user = auth.currentUser;
 
-//   if (user) {
-//     const userRef = doc(db, "users", user.uid);
-//     const userSnap = await getDoc(userRef);
+const Admin = () => {
+    const {user} = useContext(AuthContext);
+    const Navigate = useNavigate()
 
-//     if (userSnap.exists()) {
-//       const userData = userSnap.data();
-//       await setDoc(userRef, {
-//         ...userData,
-//         loggedInCount: Math.max(0, userData.loggedInCount - 1),
-//       });
-//     }
+    const handleLogout = () => {
+        auth.signOut();
+        Navigate('/');
+    }
+ if (user == null) {
+  return <Navigate to="/"/>
+ }
+  return (
+    
+       
+       
+<button onClick={handleLogout } className='bg-sky-500 text-white py-2 px-4 rounded'>
+    Keluar
 
-//     await signOut(auth);
-//     navigate('/login');
-//   }
-// };
+</button>
+        
+  )
+}
 
-//   export default handleLogout;
+export default Admin

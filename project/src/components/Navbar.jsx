@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import Admin from './logout'
 
 const Navbar = () => {
   
@@ -13,6 +14,8 @@ const Navbar = () => {
           <Link to="/skill" className="mx-2">skills</Link>
           <Link to="/contact" className="mx-2">Contact</Link>
           <Link to="/login" className="mx-2">Login</Link>
+          {/* <Link to="/logout" className="mx-2">logout</Link> */}
+          <Admin/>
         </div>
       </nav>
     </header>
