@@ -65,18 +65,21 @@ const Login = () => {
               Password
             </label>
           </div>
+          
           <div className='flex justify-between items-center'>
             <div className='flex gap-2 items-center'>
               <input type="checkbox" id='Remember-Me' />
               <label htmlFor="Remember-Me" className='text-white'>Remember Me</label>
             </div>
           </div>
+         
           <button
             type='submit'
             className='w-full mb-4 text-[18px] mt-6 rounded bg-blue-500 py-2 text-white hover:bg-blue-600 transition-colors duration-300'
           >
             Login
           </button>
+         
           <div>
             Baru disini? <Link to='/register' className='text-blue-400 hover:underline'>Buat akun baru</Link>
           </div>

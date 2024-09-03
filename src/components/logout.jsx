@@ -20,7 +20,7 @@ const Admin = () => {
        
        
 <button onClick={handleLogout } className='bg-sky-500 text-white py-2 px-4 rounded'>
-    Keluar
+    LogOut
 
 </button>
         
